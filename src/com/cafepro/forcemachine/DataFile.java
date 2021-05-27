@@ -28,6 +28,11 @@ public class DataFile {
     }
 
     // Edit Material Stock
+    public void EditStock(String name, int stockValue) throws IOException {
+
+    }
+
+    // Edit Material Stock
     public void EditData(String name, int value) {
     }
 }
