@@ -4,6 +4,7 @@ public class Material {
     private String materialName;
     private int materialNum;
 
+    // Getter and Setter
     public String getMaterialName() {
         return materialName;
     }

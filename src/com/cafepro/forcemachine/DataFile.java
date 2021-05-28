@@ -10,10 +10,10 @@ import java.util.stream.Stream;
 public class DataFile {
     final String MaterialPath = "Material.txt";
     Map<String, String> material = new HashMap<String, String>();
+    File materialFile = new File(MaterialPath);
 
     // Load Material Stock
     public Map ReadData() throws IOException {
-        File materialFile = new File(MaterialPath);
 
         String delimiter = ":";
         Map<String, String> map = new HashMap<>();
@@ -29,14 +29,25 @@ public class DataFile {
 
 
     // Edit Material Stock
-    public void EditData(String name, Map<String, String> material) {
-        material.put(name, material.get(name) + 1);
+    public void EditData(String name, Map<String, String> material, int value) {
+        material.put(name, String.valueOf(Integer.parseInt(material.get(name)) + value));
+        writeFile(material);
     }
 
-    // Test Method
-    // Edit Material Stock
-    public void Test(Map<String, String> material) {
-        EditData("초코", material);
-        System.out.println(material);
+    // Save Data File
+    public void writeFile(Map<String, String> changeMap) {
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(materialFile));
+
+            if(materialFile.isFile() && materialFile.canWrite()) {
+                for (String key : changeMap.keySet() ) {
+                    writer.write(key+":"+changeMap.get(key)+"\n");
+                }
+                writer.close();
+            }
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
