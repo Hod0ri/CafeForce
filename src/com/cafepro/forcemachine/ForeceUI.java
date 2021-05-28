@@ -2,6 +2,7 @@ package com.cafepro.forcemachine;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class ForeceUI extends JFrame {
     public ForeceUI() {
@@ -85,7 +86,10 @@ public class ForeceUI extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        ForeceUI foreceUI = new ForeceUI();
+    public static void main(String[] args) throws IOException {
+        // ForeceUI foreceUI = new ForeceUI();
+        DataFile dataFile = new DataFile();
+
+        dataFile.Test(dataFile.ReadData());
     }
 }
