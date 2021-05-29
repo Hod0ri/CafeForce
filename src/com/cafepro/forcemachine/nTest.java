@@ -52,6 +52,7 @@ public class nTest extends JFrame {
     public nTest() throws IOException {
         dataFile.ReadData();
 
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1000, 446);
         contentPane = new JPanel();
@@ -159,8 +160,9 @@ public class nTest extends JFrame {
                 }else {
                     try {
                         dataFile.EditData(viewSelection.getText(), dataFile.ReadData(), Integer.parseInt(textField.getText()));
-                        table.setValueAt(dataFile.material.get(viewSelection.getText()), 0,0);
+                        // table.setValueAt(dataFile.material.get(viewSelection.getText()), 0,0);
                         JOptionPane.showMessageDialog(null, "전송되었습니다!");
+
                     } catch (IOException ioException) {
                         ioException.printStackTrace();
                     }
