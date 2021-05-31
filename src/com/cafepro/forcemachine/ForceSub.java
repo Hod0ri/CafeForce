@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class nTest extends JFrame {
+public class ForceSub extends JFrame {
     DataFile dataFile = new DataFile();
     private JPanel contentPane;
     private JTextField textField;
@@ -16,7 +16,9 @@ public class nTest extends JFrame {
 
     // Label
     JLabel viewSelection = new JLabel("지정되지 않음");
-    //JLabel viewMaterial = new JLabel("Empty");
+
+    // Panel
+    JPanel panel = new JPanel();
 
     // Button
     JButton milk = new JButton("우유");
@@ -37,7 +39,7 @@ public class nTest extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    nTest frame = new nTest();
+                    ForceSub frame = new ForceSub();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -49,7 +51,7 @@ public class nTest extends JFrame {
     /**
      * Create the frame.
      */
-    public nTest() throws IOException {
+    public ForceSub() throws IOException {
         dataFile.ReadData();
 
         setResizable(false);
@@ -60,7 +62,6 @@ public class nTest extends JFrame {
         contentPane.setLayout(new BorderLayout(0, 0));
         setContentPane(contentPane);
 
-        JPanel panel = new JPanel();
         contentPane.add(panel, BorderLayout.WEST);
         panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
@@ -78,7 +79,6 @@ public class nTest extends JFrame {
         };
         DefaultTableModel model = new DefaultTableModel(contents, header);
         table = new JTable(contents, header);
-        model.fireTableDataChanged();
         JScrollPane scrollpane = new JScrollPane(table);
 
         panel.add(scrollpane);
@@ -160,7 +160,25 @@ public class nTest extends JFrame {
                 }else {
                     try {
                         dataFile.EditData(viewSelection.getText(), dataFile.ReadData(), Integer.parseInt(textField.getText()));
-                        // table.setValueAt(dataFile.material.get(viewSelection.getText()), 0,0);
+
+                        // Refresh Table
+                        String header[] = {"material", "stack"};
+                        String contents[][] = {
+                                {milk.getText(), dataFile.material.get(milk.getText())},
+                                {vanila.getText(), dataFile.material.get(vanila.getText())},
+                                {coffeebean1.getText(), dataFile.material.get(coffeebean1.getText())},
+                                {coffeebean2.getText(), dataFile.material.get(coffeebean2.getText())},
+                                {coffeebean3.getText(), dataFile.material.get(coffeebean3.getText())},
+                                {choco.getText(), dataFile.material.get(choco.getText())},
+                                {caramel.getText(), dataFile.material.get(caramel.getText())},
+                                {icecream.getText(), dataFile.material.get(icecream.getText())},
+                                {sweatMilk.getText(), dataFile.material.get(sweatMilk.getText())}
+                        };
+                        DefaultTableModel model = new DefaultTableModel(contents, header);
+                        table = new JTable(contents, header);
+                        JScrollPane scrollpane = new JScrollPane(table);
+                        panel.add(scrollpane);
+
                         JOptionPane.showMessageDialog(null, "전송되었습니다!");
 
                     } catch (IOException ioException) {
@@ -168,12 +186,6 @@ public class nTest extends JFrame {
                     }
                 }
             }
-
-//            try {
-//                viewMaterial.setText(viewSelection.getText() + "의 재고량은 " + dataFile.ReadData().get(viewSelection.getText()) + "입니다.");
-//            } catch (IOException ioException) {
-//                ioException.printStackTrace();
-//            }
         }
 
     }
