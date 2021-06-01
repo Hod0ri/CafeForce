@@ -160,25 +160,6 @@ public class ForceSub extends JFrame {
                 }else {
                     try {
                         dataFile.EditData(viewSelection.getText(), dataFile.ReadData(), Integer.parseInt(textField.getText()));
-
-                        // Refresh Table
-                        String header[] = {"material", "stack"};
-                        String contents[][] = {
-                                {milk.getText(), dataFile.material.get(milk.getText())},
-                                {vanila.getText(), dataFile.material.get(vanila.getText())},
-                                {coffeebean1.getText(), dataFile.material.get(coffeebean1.getText())},
-                                {coffeebean2.getText(), dataFile.material.get(coffeebean2.getText())},
-                                {coffeebean3.getText(), dataFile.material.get(coffeebean3.getText())},
-                                {choco.getText(), dataFile.material.get(choco.getText())},
-                                {caramel.getText(), dataFile.material.get(caramel.getText())},
-                                {icecream.getText(), dataFile.material.get(icecream.getText())},
-                                {sweatMilk.getText(), dataFile.material.get(sweatMilk.getText())}
-                        };
-                        DefaultTableModel model = new DefaultTableModel(contents, header);
-                        table = new JTable(contents, header);
-                        JScrollPane scrollpane = new JScrollPane(table);
-                        panel.add(scrollpane);
-
                         JOptionPane.showMessageDialog(null, "전송되었습니다!");
 
                     } catch (IOException ioException) {

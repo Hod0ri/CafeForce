@@ -125,6 +125,7 @@ public class ForceUI extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             setVisible(false);
+            // TODO: SHOW ForceSub GUI
         }
     }
 }
