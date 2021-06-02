@@ -32,6 +32,18 @@ public class ForceUI extends JFrame {
         });
     }
 
+    public void ShowMain() {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    ForceUI frame = new ForceUI();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
     /**
      * Create the frame.
      */

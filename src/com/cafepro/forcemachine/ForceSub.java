@@ -31,6 +31,7 @@ public class ForceSub extends JFrame {
     JButton icecream = new JButton("아이스크림");
     JButton sweatMilk = new JButton("연유");
     JButton submit = new JButton("재고 등록");
+    JButton goMain = new JButton("메인으로");
 
     /**
      * Launch the application.
@@ -101,6 +102,7 @@ public class ForceSub extends JFrame {
         panel_1.add(icecream);
         panel_1.add(sweatMilk);
         panel_1.add(submit);
+        panel_1.add(goMain);
 
         JPanel panel_2 = new JPanel();
         contentPane.add(panel_2, BorderLayout.NORTH);
@@ -127,6 +129,7 @@ public class ForceSub extends JFrame {
         sweatMilk.addActionListener(new EventHandler());
         icecream.addActionListener(new EventHandler());
         submit.addActionListener(new EventHandler());
+        goMain.addActionListener(new EventHandler());
 
     }
 
@@ -167,6 +170,10 @@ public class ForceSub extends JFrame {
                         ioException.printStackTrace();
                     }
                 }
+            } else if(e.getSource() == goMain) {
+                setVisible(false);
+                ForceUI forceUI = new ForceUI();
+                forceUI.ShowMain();
             }
         }
 
