@@ -35,7 +35,7 @@ public class ForceSub extends JFrame {
     /**
      * Launch the application.
      */
-    public static void main(String[] args) {
+    public static void ShowSub() {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -129,6 +129,7 @@ public class ForceSub extends JFrame {
         submit.addActionListener(new EventHandler());
 
     }
+
 
     class EventHandler implements ActionListener {
         // Edit material Stock

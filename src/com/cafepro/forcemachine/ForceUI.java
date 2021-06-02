@@ -125,7 +125,12 @@ public class ForceUI extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             setVisible(false);
-            // TODO: SHOW ForceSub GUI
+            try {
+                ForceSub forceSub = new ForceSub();
+                forceSub.ShowSub();
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
         }
     }
 }
