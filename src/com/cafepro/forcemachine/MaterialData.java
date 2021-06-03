@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class DataFile {
+public class MaterialData {
     final String MaterialPath = "Material.txt";
     Map<String, String> material = new HashMap<String, String>();
     File materialFile = new File(MaterialPath);

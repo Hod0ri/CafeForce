@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class ForceSub extends JFrame {
-    DataFile dataFile = new DataFile();
+    MaterialData dataFile = new MaterialData();
     private JPanel contentPane;
     private JTextField textField;
     private JTable table;
