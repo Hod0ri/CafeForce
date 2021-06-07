@@ -24,16 +24,16 @@ public class ForceUI extends JFrame {
     JButton afogato = new JButton("아포가토");
 
     // NumberPad
-    JButton btn1 = new JButton("1");
-    JButton btn2 = new JButton("2");
-    JButton btn3 = new JButton("3");
-    JButton btn4 = new JButton("4");
-    JButton btn5 = new JButton("5");
-    JButton btn6 = new JButton("6");
-    JButton btn7 = new JButton("7");
-    JButton btn8 = new JButton("8");
-    JButton btn9 = new JButton("9");
-    JButton btn0 = new JButton("0");
+    JButton btn_1 = new JButton("1");
+    JButton btn_2 = new JButton("2");
+    JButton btn_3 = new JButton("3");
+    JButton btn_4 = new JButton("4");
+    JButton btn_5 = new JButton("5");
+    JButton btn_6 = new JButton("6");
+    JButton btn_7 = new JButton("7");
+    JButton btn_8 = new JButton("8");
+    JButton btn_9 = new JButton("9");
+    JButton btn_0 = new JButton("0");
     JButton submit = new JButton("등록");
     JButton btn_eraseAll = new JButton("전체 삭제");
     JButton btn_erase = new JButton("이전 삭제");
@@ -65,17 +65,17 @@ public class ForceUI extends JFrame {
         contentPane.add(panel, BorderLayout.EAST);
         panel.setLayout(new GridLayout(0, 3, 0, 0));
 
-        panel.add(btn1);
-        panel.add(btn2);
-        panel.add(btn3);
-        panel.add(btn4);
-        panel.add(btn5);
-        panel.add(btn6);
-        panel.add(btn7);
-        panel.add(btn8);
-        panel.add(btn9);
+        panel.add(btn_1);
+        panel.add(btn_2);
+        panel.add(btn_3);
+        panel.add(btn_4);
+        panel.add(btn_5);
+        panel.add(btn_6);
+        panel.add(btn_7);
+        panel.add(btn_8);
+        panel.add(btn_9);
         panel.add(btn_stock);
-        panel.add(btn0);
+        panel.add(btn_0);
         panel.add(submit);
         panel.add(btn_eraseAll);
         panel.add(btn_erase);
@@ -109,16 +109,16 @@ public class ForceUI extends JFrame {
         vanilla_latte.addActionListener(new EventHandler());
 
         // Number Pad Event Handling
-        btn1.addActionListener(new EventHandler());
-        btn2.addActionListener(new EventHandler());
-        btn3.addActionListener(new EventHandler());
-        btn4.addActionListener(new EventHandler());
-        btn5.addActionListener(new EventHandler());
-        btn6.addActionListener(new EventHandler());
-        btn7.addActionListener(new EventHandler());
-        btn8.addActionListener(new EventHandler());
-        btn9.addActionListener(new EventHandler());
-        btn0.addActionListener(new EventHandler());
+        btn_1.addActionListener(new EventHandler());
+        btn_2.addActionListener(new EventHandler());
+        btn_3.addActionListener(new EventHandler());
+        btn_4.addActionListener(new EventHandler());
+        btn_5.addActionListener(new EventHandler());
+        btn_6.addActionListener(new EventHandler());
+        btn_7.addActionListener(new EventHandler());
+        btn_8.addActionListener(new EventHandler());
+        btn_9.addActionListener(new EventHandler());
+        btn_0.addActionListener(new EventHandler());
         btn_eraseAll.addActionListener(new EventHandler());
         btn_erase.addActionListener(new EventHandler());
     }
@@ -151,26 +151,26 @@ public class ForceUI extends JFrame {
                 lblNewLabel.setText(afogato.getText());
             }
             // NumberPad
-            else if (e.getSource() == btn1) {
-                checkNum(btn1.getText());
-            } else if (e.getSource() == btn2) {
-                checkNum(btn2.getText());
-            } else if (e.getSource() == btn3) {
-                checkNum(btn3.getText());
-            } else if (e.getSource() == btn4) {
-                checkNum(btn4.getText());
-            } else if (e.getSource() == btn5) {
-                checkNum(btn5.getText());
-            } else if (e.getSource() == btn6) {
-                checkNum(btn6.getText());
-            } else if (e.getSource() == btn7) {
-                checkNum(btn7.getText());
-            } else if (e.getSource() == btn8) {
-                checkNum(btn8.getText());
-            } else if (e.getSource() == btn9) {
-                checkNum(btn9.getText());
-            } else if (e.getSource() == btn0) {
-                checkNum(btn0.getText());
+            else if (e.getSource() == btn_1) {
+                checkNum(btn_1.getText());
+            } else if (e.getSource() == btn_2) {
+                checkNum(btn_2.getText());
+            } else if (e.getSource() == btn_3) {
+                checkNum(btn_3.getText());
+            } else if (e.getSource() == btn_4) {
+                checkNum(btn_4.getText());
+            } else if (e.getSource() == btn_5) {
+                checkNum(btn_5.getText());
+            } else if (e.getSource() == btn_6) {
+                checkNum(btn_6.getText());
+            } else if (e.getSource() == btn_7) {
+                checkNum(btn_7.getText());
+            } else if (e.getSource() == btn_8) {
+                checkNum(btn_8.getText());
+            } else if (e.getSource() == btn_9) {
+                checkNum(btn_9.getText());
+            } else if (e.getSource() == btn_0) {
+                checkNum(btn_0.getText());
             } else if (e.getSource() == btn_eraseAll) {
                 priceView.setText("0");
             } else if (e.getSource() == btn_erase) {
