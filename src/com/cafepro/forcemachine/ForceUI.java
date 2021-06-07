@@ -2,7 +2,6 @@ package com.cafepro.forcemachine;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.text.html.FormView;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +10,6 @@ import java.io.IOException;
 public class ForceUI extends JFrame {
 
     private JPanel contentPane;
-    private JTextField textField;
 
     // Label
     JLabel lblNewLabel = new JLabel("주문 없음");
@@ -40,24 +38,6 @@ public class ForceUI extends JFrame {
     JButton btn_eraseAll = new JButton("전체 삭제");
     JButton btn_erase = new JButton("이전 삭제");
 
-
-
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    ForceUI frame = new ForceUI();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
     public void ShowMain() {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -70,9 +50,7 @@ public class ForceUI extends JFrame {
             }
         });
     }
-    /**
-     * Create the frame.
-     */
+
     public ForceUI() {
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -120,9 +98,6 @@ public class ForceUI extends JFrame {
         panel_2.add(lblNewLabel);
         panel_2.setPreferredSize(new Dimension(200,400));
 
-        // textField = new JTextField();
-        // contentPane.add(textField, BorderLayout.NORTH);
-        // textField.setColumns(10);
         contentPane.add(priceView, BorderLayout.NORTH);
 
         btn_stock.addActionListener(new EventHandler());
@@ -146,8 +121,6 @@ public class ForceUI extends JFrame {
         btn0.addActionListener(new EventHandler());
         btn_eraseAll.addActionListener(new EventHandler());
         btn_erase.addActionListener(new EventHandler());
-
-
     }
 
     class EventHandler implements ActionListener {
@@ -179,75 +152,25 @@ public class ForceUI extends JFrame {
             }
             // NumberPad
             else if (e.getSource() == btn1) {
-                if(priceView.getText().isBlank()) {
-                    priceView.setText("1");
-                } else {
-                    String exValue = priceView.getText();
-                    priceView.setText(exValue + "1");
-                }
+                checkNum(btn1.getText());
             } else if (e.getSource() == btn2) {
-                if(priceView.getText().isBlank()) {
-                    priceView.setText("2");
-                } else {
-                    String exValue = priceView.getText();
-                    priceView.setText(exValue + "2");
-                }
+                checkNum(btn2.getText());
             } else if (e.getSource() == btn3) {
-                if(priceView.getText().isBlank()) {
-                    priceView.setText("3");
-                } else {
-                    String exValue = priceView.getText();
-                    priceView.setText(exValue + "3");
-                }
+                checkNum(btn3.getText());
             } else if (e.getSource() == btn4) {
-                if(priceView.getText().isBlank()) {
-                    priceView.setText("4");
-                } else {
-                    String exValue = priceView.getText();
-                    priceView.setText(exValue + "4");
-                }
+                checkNum(btn4.getText());
             } else if (e.getSource() == btn5) {
-                if(priceView.getText().isBlank()) {
-                    priceView.setText("5");
-                } else {
-                    String exValue = priceView.getText();
-                    priceView.setText(exValue + "5");
-                }
+                checkNum(btn5.getText());
             } else if (e.getSource() == btn6) {
-                if(priceView.getText().isBlank()) {
-                    priceView.setText("6");
-                } else {
-                    String exValue = priceView.getText();
-                    priceView.setText(exValue + "6");
-                }
+                checkNum(btn6.getText());
             } else if (e.getSource() == btn7) {
-                if(priceView.getText().isBlank()) {
-                    priceView.setText("7");
-                } else {
-                    String exValue = priceView.getText();
-                    priceView.setText(exValue + "7");
-                }
+                checkNum(btn7.getText());
             } else if (e.getSource() == btn8) {
-                if(priceView.getText().isBlank()) {
-                    priceView.setText("8");
-                } else {
-                    String exValue = priceView.getText();
-                    priceView.setText(exValue + "8");
-                }
+                checkNum(btn8.getText());
             } else if (e.getSource() == btn9) {
-                if(priceView.getText().isBlank()) {
-                    priceView.setText("9");
-                } else {
-                    String exValue = priceView.getText();
-                    priceView.setText(exValue + "9");
-                }
+                checkNum(btn9.getText());
             } else if (e.getSource() == btn0) {
-                if(priceView.getText().isBlank()) {
-                    priceView.setText("0");
-                } else {
-                    String exValue = priceView.getText();
-                    priceView.setText(exValue + "0");
-                }
+                checkNum(btn0.getText());
             } else if (e.getSource() == btn_eraseAll) {
                 priceView.setText("0");
             } else if (e.getSource() == btn_erase) {
@@ -256,10 +179,18 @@ public class ForceUI extends JFrame {
                     temp = temp.substring(0, temp.length() - 1);
                     priceView.setText(temp);
                 } else {
-                    JOptionPane.showMessageDialog(null, "더이상 지울 값이 없습니다!");
+                    JOptionPane.showMessageDialog(null, "더이상 지울 값이 없습니다!","오류!", JOptionPane.ERROR_MESSAGE);
                 }
-
             }
+        }
+    }
+
+    private void checkNum(String sNumber) {
+        if(priceView.getText().isBlank()) {
+            priceView.setText(sNumber);
+        } else {
+            String exValue = priceView.getText();
+            priceView.setText(exValue + sNumber);
         }
     }
 }
