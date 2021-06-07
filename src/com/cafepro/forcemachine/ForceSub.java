@@ -54,7 +54,7 @@ public class ForceSub extends JFrame {
      */
     public ForceSub() throws IOException {
         dataFile.ReadData();
-
+        setTitle("카페 Pro 포스 시스템 - 재고");
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1000, 446);
@@ -164,11 +164,10 @@ public class ForceSub extends JFrame {
                 }else {
                     try {
                         dataFile.EditData(viewSelection.getText(), dataFile.ReadData(), Integer.parseInt(textField.getText()));
-                        JOptionPane.showMessageDialog(null, "전송되었습니다!");
-
                     } catch (IOException ioException) {
                         ioException.printStackTrace();
                     }
+                    JOptionPane.showMessageDialog(null, "전송되었습니다!");
                 }
             } else if(e.getSource() == goMain) {
                 setVisible(false);

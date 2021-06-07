@@ -3,6 +3,7 @@ package com.cafepro.forcemachine;
 public class Beverage {
     private String beverageName;
     private int beveragePrice;
+    protected int orderCount = 0;
 
     public String getBeverageName() {
         return beverageName;

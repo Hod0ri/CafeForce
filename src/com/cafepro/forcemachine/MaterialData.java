@@ -30,7 +30,7 @@ public class MaterialData {
 
     // Edit Material Stock
     public void EditData(String name, Map<String, String> material, int value) {
-        material.put(name, String.valueOf(Integer.parseInt(material.get(name)) + value));
+        material.put(name, String.valueOf(value));
         writeFile(material);
     }
 
