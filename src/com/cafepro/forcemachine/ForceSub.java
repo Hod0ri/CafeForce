@@ -84,9 +84,6 @@ public class ForceSub extends JFrame {
 
         panel.add(scrollpane);
 
-        //viewMaterial.setPreferredSize(new Dimension(200,300));
-        //panel.add(viewMaterial);
-
         JPanel panel_1 = new JPanel();
         contentPane.add(panel_1, BorderLayout.EAST);
         panel_1.setPreferredSize(new Dimension(400,300));

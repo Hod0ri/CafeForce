@@ -11,19 +11,26 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public class BeverageData {
+    MaterialData md = new MaterialData();
+
     final String BeveragePath = "Beverage.txt";
     Map<String, String> beverage = new HashMap<String, String>();
     File beverageFile = new File(BeveragePath);
 
     // Load Material Stock
     public Map ReadData() throws IOException {
-        // Only use Method
-        MaterialData md = new MaterialData();
-        beverage = md.ReadData();
-        return beverage;
-    }
 
-    MaterialData md = new MaterialData();
+        String delimiter = ":";
+        Map<String, String> map = new HashMap<>();
+
+        try(Stream<String> lines = Files.lines(Paths.get(BeveragePath))){
+            lines.filter(line -> line.contains(delimiter)).forEach(
+                    line -> map.putIfAbsent(line.split(delimiter)[0], line.split(delimiter)[1])
+            );
+        }
+        beverage = map;
+        return map;
+    }
 
 
     // Edit Material Stock
@@ -48,6 +55,4 @@ public class BeverageData {
             e.printStackTrace();
         }
     }
-
-    // TODO : HashMap to Object (name, amount)
 }

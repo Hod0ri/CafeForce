@@ -12,7 +12,7 @@ public class ForceUI extends JFrame {
     private JPanel contentPane;
 
     // Label
-    JLabel lblNewLabel = new JLabel("주문 없음");
+    JLabel lblNewLabel = new JLabel("<html>");
     JLabel priceView = new JLabel("0");
     // Buttons
     JButton btn_stock = new JButton("재고 관리");
