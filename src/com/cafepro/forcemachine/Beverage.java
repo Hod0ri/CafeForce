@@ -1,7 +1,6 @@
 package com.cafepro.forcemachine;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -38,6 +37,13 @@ public class Beverage {
         }
 
         return OrderBeverage;
+    }
+
+    public void InitialOrder() throws IOException {
+        Map<String, String> mTemp = InitializeBev();
+
+        Map<String, Integer> OrderMap;
+
     }
 
 }
