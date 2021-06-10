@@ -1,8 +1,8 @@
-package com.cafepro.forcemachine;
+package com.cafepro.pos;
 
 public class Application {
     public static void main(String[] args) {
-        ForceUI app = new ForceUI();
+        POSMain app = new POSMain();
         app.ShowMain();
     }
 }

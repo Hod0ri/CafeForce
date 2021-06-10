@@ -1,4 +1,4 @@
-package com.cafepro.forcemachine;
+package com.cafepro.pos;
 
 public class Material {
     private String materialName;

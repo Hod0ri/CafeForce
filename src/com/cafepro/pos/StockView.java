@@ -1,4 +1,4 @@
-package com.cafepro.forcemachine;
+package com.cafepro.pos;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class ForceSub extends JFrame {
+public class StockView extends JFrame {
     MaterialData dataFile = new MaterialData();
     private JPanel contentPane;
     private JTextField textField;
@@ -40,7 +40,7 @@ public class ForceSub extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    ForceSub frame = new ForceSub();
+                    StockView frame = new StockView();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -52,7 +52,7 @@ public class ForceSub extends JFrame {
     /**
      * Create the frame.
      */
-    public ForceSub() throws IOException {
+    public StockView() throws IOException {
         dataFile.ReadData();
         setTitle("카페 Pro 포스 시스템 - 재고");
         setResizable(false);
@@ -168,8 +168,8 @@ public class ForceSub extends JFrame {
                 }
             } else if(e.getSource() == goMain) {
                 setVisible(false);
-                ForceUI forceUI = new ForceUI();
-                forceUI.ShowMain();
+                POSMain POSMain = new POSMain();
+                POSMain.ShowMain();
             }
         }
 

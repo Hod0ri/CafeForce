@@ -1,4 +1,4 @@
-package com.cafepro.forcemachine;
+package com.cafepro.pos;
 
 import java.io.IOException;
 import java.util.Map;

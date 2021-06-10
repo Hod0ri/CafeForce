@@ -1,4 +1,4 @@
-package com.cafepro.forcemachine;
+package com.cafepro.pos;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class ForceUI extends JFrame {
+public class POSMain extends JFrame {
 
     private JPanel contentPane;
 
@@ -42,7 +42,7 @@ public class ForceUI extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    ForceUI frame = new ForceUI();
+                    POSMain frame = new POSMain();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -51,7 +51,7 @@ public class ForceUI extends JFrame {
         });
     }
 
-    public ForceUI() {
+    public POSMain() {
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 746, 407);
@@ -130,8 +130,8 @@ public class ForceUI extends JFrame {
             if(e.getSource() == btn_stock) {
                 setVisible(false);
                 try {
-                    ForceSub forceSub = new ForceSub();
-                    forceSub.ShowSub();
+                    StockView stockView = new StockView();
+                    stockView.ShowSub();
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
