@@ -37,6 +37,7 @@ public class POSMain extends JFrame {
     JButton submit = new JButton("등록");
     JButton btn_eraseAll = new JButton("전체 삭제");
     JButton btn_erase = new JButton("이전 삭제");
+    JButton priceSubmit = new JButton("가격 등록");
 
     public void ShowMain() {
         EventQueue.invokeLater(new Runnable() {
@@ -79,6 +80,7 @@ public class POSMain extends JFrame {
         panel.add(submit);
         panel.add(btn_eraseAll);
         panel.add(btn_erase);
+        panel.add(priceSubmit);
 
         JPanel panel_1 = new JPanel();
         contentPane.add(panel_1, BorderLayout.CENTER);
@@ -121,6 +123,7 @@ public class POSMain extends JFrame {
         btn_0.addActionListener(new EventHandler());
         btn_eraseAll.addActionListener(new EventHandler());
         btn_erase.addActionListener(new EventHandler());
+        priceSubmit.addActionListener(new EventHandler());
     }
 
     class EventHandler implements ActionListener {
